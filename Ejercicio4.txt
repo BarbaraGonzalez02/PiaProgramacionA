@@ -1,0 +1,26 @@
+PiaPa = open("Ejercicio4.txt","x")
+PiaPa = open("Ejercicio4.txt","w")
+# No. 4
+class Dinosaurio:
+    def __init__(self, nombre, peso_libras, longitud_pies):
+        self.nombre = nombre
+        self.peso_libras = peso_libras
+        self.longitud_pies = longitud_pies
+
+    def dinosaurio(self):
+        peso_kilogramos = self.peso_libras * 0.453592
+
+        longitud_metros = self.longitud_pies * 0.3047
+
+        print(f"Nombre del dinosaurio: {self.nombre}")
+        print(f"Peso en kilogramos: {peso_kilogramos:.2f} kg")
+        print(f"Longitud en metros: {longitud_metros:.2f} m")
+
+
+# Bloque principal
+nombre_dinosaurio = input("Ingrese el nombre del dinosaurio: ")
+peso_dinosaurio = float(input("Ingrese el peso del dinosaurio en libras: "))
+longitud_dinosaurio = float(input("Ingrese la longitud del dinosaurio en pies: "))
+
+el_dinosaurio = Dinosaurio(nombre_dinosaurio, peso_dinosaurio, longitud_dinosaurio)
+el_dinosaurio.dinosaurio()

@@ -1,0 +1,20 @@
+# No. 1
+PiaPa = open("Ejercicio1.txt","x")
+PiaPa = open("Ejercicio1.txt","w")
+class Tres_programas:
+    def __init__(self, programa1, programa2, programa3):
+        self.programa1 = programa1
+        self.programa2 = programa2
+        self.programa3 = programa3
+
+    def ejecutar_programas(self):
+        print(f"Ejecutando Programa 1: {self.programa1}")
+
+        print(f"Ejecutando Programa 2: {self.programa2}")
+
+        print(f"Ejecutando Programa 3: {self.programa3}")
+
+
+# Bloque principal
+los_programas = Tres_programas("ProgramaA", "ProgramaB", "ProgramaC")
+los_programas.ejecutar_programas()

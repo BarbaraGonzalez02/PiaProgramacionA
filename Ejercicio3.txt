@@ -1,0 +1,42 @@
+PiaPa = open("Ejercicio3.txt","x")
+PiaPa = open("Ejercicio3.txt","w")
+# No. 3
+class Venta:
+    def __init__(self, compra):
+        self.COMPRA = compra
+        self.PAGAR = self.calcular_descuento()
+
+    def calcular_descuento(self):
+        if 3500.00 <= self.COMPRA <= 3115.00:
+            descuento = 0.10  # 10% de descuento
+        elif 6850.00 <= self.COMPRA <= 6095.00:
+            descuento = 0.11  # 11% de descuento
+        elif 375.80 == self.COMPRA:
+            descuento = 0  # No hay descuento
+        elif 690.50 <= self.COMPRA <= 655.97:
+            descuento = 0.05  # 5% de descuento
+        elif 12350.00 <= self.COMPRA <= 10127.00:
+            descuento = 0.18  # 18% de descuento
+        elif 25314.18 <= self.COMPRA <= 18985.63:
+            descuento = 0.25  # 25% de descuento
+        elif 3750.00 <= self.COMPRA <= 3337.50:
+            descuento = 0.11  # 11% de descuento
+        elif 14200.50 <= self.COMPRA <= 11644.41:
+            descuento = 0.18  # 18% de descuento
+        elif 895.80 <= self.COMPRA <= 851.01:
+            descuento = 0.05  # 5% de descuento
+        elif 1318.50 <= self.COMPRA <= 1173.46:
+            descuento = 0.10  # 10% de descuento
+        else:
+            descuento = 0  # No hay descuento
+
+        monto_descuento = self.COMPRA * descuento
+        monto_pagar = self.COMPRA - monto_descuento
+
+        return monto_pagar
+
+# Bloque principal
+monto_compra = float(input("Ingrese el monto de la compra: "))
+venta_actual = Venta(monto_compra)
+
+print(f"El cliente debe pagar: {venta_actual.PAGAR:.2f}")

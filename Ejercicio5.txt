@@ -1,0 +1,32 @@
+PiaPa = open("Ejercicio5.txt","x")
+PiaPa = open("Ejercicio5.txt","w")
+# No. 5
+class Dinosaurio:
+    def __init__(self, nombre, peso, longitud):
+        self.NOM = nombre
+        self.PES = peso
+        self.LON = longitud
+        self.PESKIL, self.LONMET = self.convertir_unidades()
+
+    def convertir_unidades(self):
+        peso_kilogramos = self.PES * 1000
+
+        longitud_metros = self.LON * 0.3047
+
+        return peso_kilogramos, longitud_metros
+
+# Resultados de los dinosaurios
+dinosaurio1 = Dinosaurio("PLATEOSAURUS", 5, 30)
+print(f"No.1 - Resultado: PESKIL: {dinosaurio1.PESKIL}, LONMET: {dinosaurio1.LONMET:.2f}")
+
+dinosaurio2 = Dinosaurio("DIPLOJOCUS", 15, 90)
+print(f"No.2 - Resultado: PESKIL: {dinosaurio2.PESKIL}, LONMET: {dinosaurio2.LONMET:.2f}")
+
+dinosaurio3 = Dinosaurio("BRACHIOSAURUS", 50, 80)
+print(f"No.3 - Resultado: PESKIL: {dinosaurio3.PESKIL}, LONMET: {dinosaurio3.LONMET:.2f}")
+
+dinosaurio4 = Dinosaurio("BRONTOSAURUS", 25, 70)
+print(f"No.4 - Resultado: PESKIL: {dinosaurio4.PESKIL}, LONMET: {dinosaurio4.LONMET:.2f}")
+
+dinosaurio5 = Dinosaurio("TYRANNOSAURUS", 8, 30)
+print(f"No.5 - Resultado: PESKIL: {dinosaurio5.PESKIL}, LONMET: {dinosaurio5.LONMET:.2f}")

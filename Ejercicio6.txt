@@ -1,0 +1,17 @@
+PiaPa = open("Ejercicio6.txt","x")
+PiaPa = open("Ejercicio6.txt","w")
+#No. 6
+def gasolina(galon):
+    litros = galon * 3.785
+    precio_por_litro = 8.20
+
+    costo_total = litros * precio_por_litro
+
+    return costo_total
+
+
+gal = float(input("Ingrese la cantidad de galones surtidos: "))
+
+Total = gasolina(gal)
+
+print(f"El costo a cobrar al cliente es: ${Total:.2f}")

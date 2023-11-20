@@ -1,0 +1,35 @@
+#No.7
+ejercicio7 = open("Ejercicio7.txt","x")
+class archivo_texto:
+    def __init__(self, nombre_archivo):
+        self.nombre_archivo = nombre_archivo
+
+    def crear_archivo(self, contenido):
+        with open(self.nombre_archivo, 'w') as archivo:
+            archivo.write(contenido)
+        print(f"Archivo '{self.nombre_archivo}' creado con éxito.")
+
+    def escribir_archivo(self, contenido):
+        with open(self.nombre_archivo, 'a') as archivo:
+            archivo.write(contenido)
+        print(f"Contenido que se agrega al archivo '{self.nombre_archivo}'.")
+
+    def leer_archivo(self):
+        try:
+            with open(self.nombre_archivo, 'r') as archivo:
+                contenido = archivo.read()
+            print(f"Contenido del archivo '{self.nombre_archivo}':")
+            print(contenido)
+            return contenido
+        except FileNotFoundError:
+            print(f"El archivo '{self.nombre_archivo}' no existe.")
+
+    def archivos(self, opcion, contenido=None):
+        if opcion == 'crear':
+            self.crear_archivo(contenido)
+        elif opcion == 'escribir':
+            self.escribir_archivo(contenido)
+        elif opcion == 'leer':
+            self.leer_archivo()
+        else:
+            print("Opción no válida. Las opciones válidas son 'crear', 'escribir' o 'leer'.")
